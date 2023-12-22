@@ -1,5 +1,9 @@
 ---
 const { title, description, image } = Astro.props;
+
+// Default image URL
+const defaultImageUrl = "https://indiluther.com/images/IMG_0610.jpeg";
+const twitterImageUrl = image || defaultImageUrl; // Twitter image URL
 ---
 
 <head>
@@ -10,8 +14,19 @@ const { title, description, image } = Astro.props;
   <title>{title}</title>
   <meta charset="utf-8" />
   <meta name="description" content={description} />
+  <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={image} />
+  <meta property="og:image" content={image || defaultImageUrl} />
+
+  <!-- Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Use "summary" for a smaller card -->
+  <meta name="twitter:creator" content="@vidluther" />
+
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={twitterImageUrl} />
+
   <!-- More SEO and OpenGraph tags as needed -->
 </head>

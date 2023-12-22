@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import MetaTags from "@components/MetaTags.astro";
 import Header from "@components/Header.astro";
+import { Img } from "astro-imagetools/components";
 ---
 
 <BaseLayout>
@@ -10,5 +11,56 @@ import Header from "@components/Header.astro";
     description="Indi Luther's Website ...."
   />
 
-   IndiLuther.com
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-1/2 p-4">
+      <!-- Image(s) here -->
+      <Img
+        src="/images/IMG_0632.jpeg"
+        alt="Indi Luther in front of the St Patricks Shamrock"
+        attributes={{
+          class: "max-w-full h-auto",
+        }}
+      />
+    </div>
+    <div class="md:w-1/2 p-4 prose">
+      <!-- Text content here -->
+      <h1 class="text-center">Indi Luther</h1>
+      <p>Welcome to my Website</p>
+      <div
+        id="ageDisplay"
+        class="bg-blue-100 text-blue-800 text-xl font-bold p-4 my-4 rounded-lg shadow-md"
+      >
+        Loading...
+      </div>
+      <p class="prose">
+        You're probably here to see the video of your child's performance in the
+
+
+        <a class="text-blue-800" href="/stpatricks">
+          Saint Patricks 2023 K3/K4 or 4th grade play</a
+        >
+      </p>
+    </div>
+  </div>
 </BaseLayout>
+<script>
+  function calculateDaysOld() {
+    const birthDate = new Date("2013-09-17");
+    const today = new Date();
+
+    const differenceInTime = today.getTime() - birthDate.getTime();
+
+    // Calculate days and years
+    const daysOld = Math.floor(differenceInTime / (1000 * 3600 * 24));
+    const formattedDaysOld = daysOld.toLocaleString("en-US");
+    const yearsOld = Math.floor(daysOld / 365.25); // includes leap years
+
+    return `As of right now, I'm ${formattedDaysOld} days..or about ${yearsOld} years old.`;
+  }
+
+  // Update the display on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const ageDisplayElement = document.getElementById("ageDisplay");
+    ageDisplayElement.textContent = calculateDaysOld();
+  });
+</script>

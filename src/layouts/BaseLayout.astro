@@ -10,4 +10,11 @@ import Footer from "@components/Footer.astro";
     <slot />
   </main>
   <Footer />
+  <style is:global>
+    /* Unscoped, delivered as-is to the browser.
+     Applies to all <h1> tags on your site. */
+    h1 {
+      font-size: 3rem;
+    }
+  </style>
 </html>

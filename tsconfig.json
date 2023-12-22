@@ -19,7 +19,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@shared/*": ["src/shared/*"]
     },
     "types": ["astro/env"],
     "strictNullChecks": true

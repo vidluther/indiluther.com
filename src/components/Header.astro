@@ -34,7 +34,6 @@ import type { iconPaths } from "./Icon.js";
           </div>
 
           <!-- Desktop Navigation -->
-          <!-- Desktop Navigation -->
           <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
             {
               textLinks.map(({ label, href }) => (
@@ -75,34 +74,6 @@ import type { iconPaths } from "./Icon.js";
       </div>
     </div>
   </nav>
-</div>
-
-<script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
-
-<!-- Mobile Navigation (hidden by default) -->
-<div
-  class="absolute top-16 left-0 z-50 w-full sm:hidden bg-white shadow-md hidden"
-  id="mobile-menu"
->
-  <div class="px-2 pt-2 pb-3 space-y-1">
-    {
-      textLinks.map(({ label, href }) => (
-        <a
-          href={href}
-          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-        >
-          {label}
-        </a>
-      ))
-    }
-  </div>
 </div>
 
 <script>

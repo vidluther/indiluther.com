@@ -3,8 +3,6 @@
 import textLinks from "@shared/NavigationLinks.js";
 import Icon from "./Icon.astro";
 // Import the icon paths
-
-import type { iconPaths } from "./Icon.js";
 ---
 
 <div class="min-h-full">
@@ -13,7 +11,7 @@ import type { iconPaths } from "./Icon.js";
       <div class="flex h-16 justify-between">
         <!-- Hamburger Icon for Mobile -->
         <button class="sm:hidden" id="menu-toggle">
-          <Icon icon="solid-terminal" size="1.6em" />
+          <Icon icon="list" size="1.6em" />
           <!-- Replace with your menu icon -->
         </button>
 
@@ -25,7 +23,7 @@ import type { iconPaths } from "./Icon.js";
               class="border-indigo-500 text-gray-900 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium"
             >
               <Icon
-                icon="modern-home"
+                icon="home"
                 color="var(--accent-regular)"
                 size="1.6em"
                 gradient

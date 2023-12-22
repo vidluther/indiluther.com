@@ -2,7 +2,6 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import MetaTags from "@components/MetaTags.astro";
 import Header from "@components/Header.astro";
-import { Img } from "astro-imagetools/components";
 ---
 
 <BaseLayout>
@@ -14,12 +13,10 @@ import { Img } from "astro-imagetools/components";
   <div class="flex flex-col md:flex-row">
     <div class="md:w-1/2 p-4">
       <!-- Image(s) here -->
-      <Img
+      <img
         src="/images/IMG_0632.jpeg"
         alt="Indi Luther in front of the St Patricks Shamrock"
-        attributes={{
-          class: "max-w-full h-auto",
-        }}
+        class="max-w-full h-auto"
       />
     </div>
     <div class="md:w-1/2 p-4 prose">
